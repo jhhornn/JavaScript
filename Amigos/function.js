@@ -35,3 +35,18 @@ console.log(hello());
 console.log(powers);
 console.log(add(100, 100));
 console.log(milesToKm(100));
+
+//Function Default Parameters
+console.log()
+console.log('---Function  Default Parameters---')
+
+const calculatePay = (yearSalary, bonus = {
+    teamBonus: 0,
+    employeeBonus: 0,
+}) => {
+    return yearSalary + bonus.teamBonus + bonus.employeeBonus;
+}
+console.log(calculatePay(22000, {
+    teamBonus: 10000,
+    employeeBonus: 6000
+}))
