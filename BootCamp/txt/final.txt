@@ -1,0 +1,3 @@
+This is me trying out the readFile system on javascript. Hope to finish this project
+
+This is me just learning the asynchronous way of going about this on java script.

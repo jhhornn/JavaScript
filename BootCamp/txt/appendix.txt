@@ -1,0 +1,1 @@
+This is me just learning the asynchronous way of going about this on java script.

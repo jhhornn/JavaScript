@@ -1,0 +1,1 @@
+This is me trying out the readFile system on javascript. Hope to finish this project
