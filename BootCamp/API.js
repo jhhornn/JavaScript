@@ -3,33 +3,47 @@ const fs = require('fs');
 const http = require('http');
 const url = require('url');
 
+const replaceTemplate = require('./modules/replaceTemplate')
+
 /*Create a server
 Start the server 
 Listen to incoming request
 The callback function in the http create server
 is triggered everytime a request is made*/
 
+
 const tempOverview = fs.readFileSync(`${__dirname}/templates/overview.html`, 'utf-8');
 const tempCard = fs.readFileSync(`${__dirname}/templates/card.html`, 'utf-8');
 const tempProduct = fs.readFileSync(`${__dirname}/templates/product.html`, 'utf-8');
+
+
 const data = fs.readFileSync(`${__dirname}/sample.json`, 'utf-8');
 const dataObject = JSON.parse(data);
 
 
 const server = http.createServer((req, res) => {
-    const pathName = req.url;
+
+    const { query, pathname } = url.parse(req.url, true);
 
 
     //Overview page
-    if (pathName === '/' || pathName === '/overview') {
-        res.end('This is the Overview');
+    if (pathname === '/' || pathname === '/overview') {
+        res.writeHead(200, { 'content-type': 'text/html' });
+
+
+        const cardHtml = dataObject.map(el => replaceTemplate(tempCard, el)).join('');
+        const output = tempOverview.replace('{%PRODUCT_CARDS%}', cardHtml);
+        res.end(output);
 
         //Product Page
-    } else if (pathName === '/product') {
-        res.end('This is the PRODUCT');
+    } else if (pathname === '/product') {
+        res.writeHead(200, { 'content-type': 'text/html' });
+        const product = dataObject[query.id];
+        const output = replaceTemplate(tempProduct, product);
+        res.end(output);
 
         //API
-    } else if (pathName === '/api') {
+    } else if (pathname === '/api') {
         res.writeHead(200, { 'content-type': 'application/json' });
         res.end(data);
 

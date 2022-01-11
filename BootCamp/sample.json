@@ -11,17 +11,6 @@
     },
     {
         "id": 1,
-        "productName": "Goat and Sheep Cheese",
-        "image": "🧀",
-        "from": "Portugal",
-        "nutrients": "Vitamin A, Calcium",
-        "quantity": "250g",
-        "price": "5.00",
-        "organic": false,
-        "description": "Creamy and distinct in flavor, goat cheese is a dairy product enjoyed around the world. Goat cheese comes in a wide variety of flavors and textures, from soft and spreadable fresh cheese to salty, crumbly aged cheese. Although it’s made using the same coagulation and separation process as cheese made from cow’s milk, goat cheese differs in nutrient content."
-    },
-    {
-        "id": 2,
         "productName": "Apollo Broccoli",
         "image": "🥦",
         "from": "Portugal",
@@ -30,6 +19,17 @@
         "price": "5.50",
         "organic": true,
         "description": "Broccoli is known to be a hearty and tasty vegetable which is rich in dozens of nutrients. It is said to pack the most nutritional punch of any vegetable. When we think about green vegetables to include in our diet, broccoli is one of the foremost veggies to come to our mind. Broccoli is a cruciferous vegetable and part of the cabbage family, which includes vegetables such as Brussel sprouts and kale. Although the tastes are different, broccoli and these other vegetables are from the same family."
+    },
+    {
+        "id": 2,
+        "productName": "Goat and Sheep Cheese",
+        "image": "🧀",
+        "from": "Portugal",
+        "nutrients": "Vitamin A, Calcium",
+        "quantity": "250g",
+        "price": "5.00",
+        "organic": false,
+        "description": "Creamy and distinct in flavor, goat cheese is a dairy product enjoyed around the world. Goat cheese comes in a wide variety of flavors and textures, from soft and spreadable fresh cheese to salty, crumbly aged cheese. Although it’s made using the same coagulation and separation process as cheese made from cow’s milk, goat cheese differs in nutrient content."
     },
     {
         "id": 3,
