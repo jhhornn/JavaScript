@@ -2,14 +2,15 @@
 const fs = require('fs');
 const http = require('http');
 const url = require('url');
-
-const replaceTemplate = require('./modules/replaceTemplate')
+const slugify = require('slugify');
+const replaceTemplate = require('./modules/replaceTemplate');
 
 /*Create a server
 Start the server 
 Listen to incoming request
 The callback function in the http create server
 is triggered everytime a request is made*/
+
 
 
 const tempOverview = fs.readFileSync(`${__dirname}/templates/overview.html`, 'utf-8');
@@ -19,6 +20,8 @@ const tempProduct = fs.readFileSync(`${__dirname}/templates/product.html`, 'utf-
 
 const data = fs.readFileSync(`${__dirname}/sample.json`, 'utf-8');
 const dataObject = JSON.parse(data);
+
+const slug = dataObject.map(el => slugify(el.productName, { lower: true }))
 
 
 const server = http.createServer((req, res) => {
